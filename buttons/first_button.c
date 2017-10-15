@@ -16,6 +16,10 @@ int main(int argc,char *argv[])
 	gtk_container_add(GTK_CONTAINER(window),button);
 	g_signal_connect(window,"delete-event",(G_CALLBACK(gtk_main_quit)),NULL);
 	g_signal_connect(button,"clicked",G_CALLBACK(button_clicked),NULL);
+
+	gtk_widget_set_size_request(window,300,300);
+	gtk_widget_set_size_request(button,100,50); //doesn't work. request ignored
+
 	gtk_widget_show_all(window);
 
 	gtk_main();
