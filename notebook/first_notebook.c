@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 		gtk_notebook_append_page(GTK_NOTEBOOK(notebook),label,label_1);
 	}
-
+	gtk_notebook_set_scrollable(GTK_NOTEBOOK(notebook),1);
 	gtk_container_add(GTK_CONTAINER(window),notebook);
 
 	gtk_widget_show_all(window);
