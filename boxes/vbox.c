@@ -13,7 +13,7 @@ int main(int argc,char *argv[])
 	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	button = gtk_button_new_with_label("Click me to change the label");
 	vbox = gtk_box_new(0,1);
-	gtk_orientable_set_orientation(GTK_ORIENTABLE(vbox),GTK_ORIENTATION_VERTICAL);
+	gtk_orientable_set_orientation(GTK_ORIENTABLE(vbox),GTK_ORIENTATION_VERTICAL); //setting orientation for the vbox
 	label = gtk_label_new("hello, world!");
 
 	gtk_box_pack_start(GTK_BOX(vbox),label,1,1,0);
