@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 
 	gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(progress),0.23);
 	gtk_progress_bar_set_text(GTK_PROGRESS_BAR(progress),"23%");
+	gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(progress),GTK_PROGRESS_TOP_TO_BOTTOM);
 
 	gtk_container_add(GTK_CONTAINER(window),progress);
 	
