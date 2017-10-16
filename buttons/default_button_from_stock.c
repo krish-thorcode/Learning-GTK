@@ -11,7 +11,7 @@ int main(int argc,char *argv[])
 
 	button =gtk_button_new_from_stock(GTK_STOCK_APPLY);
 
-	gtk_container_add(GTK_CONTAINER(window),window);
+	gtk_container_add(GTK_CONTAINER(window),button);
 
 	gtk_widget_show_all(window);
 
