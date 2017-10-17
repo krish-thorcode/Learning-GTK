@@ -21,6 +21,8 @@ int main(int argc,char *argv[])
 	/* gtk_hscale(or vscale)_new takes only one argument, which GtkAdjustment variable */
 	scale = gtk_hscale_new(GTK_ADJUSTMENT(adjustment));
 	gtk_scale_set_value_pos(GTK_SCALE(scale),GTK_POS_BOTTOM); //GTK_POS_TOP is default, LEFT and RIGHT also possible
+	gtk_scale_set_digits(GTK_SCALE(scale),3); //increases the precision of value
+	gtk_scale_set_draw_value(GTK_SCALE(scale),0); //setting 1 instead of 0 will make the value visible
 	g_signal_connect(scale,"value-changed",G_CALLBACK(scale_slide),NULL);
 
 	gtk_container_add(GTK_CONTAINER(window),scale);
