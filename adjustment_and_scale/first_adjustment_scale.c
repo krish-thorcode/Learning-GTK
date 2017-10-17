@@ -1,5 +1,10 @@
 #include<gtk/gtk.h>
 
+static void scale_slide(GtkWidget *widget, gpointer data)
+{
+	g_print("%f\n",gtk_range_get_value(GTK_RANGE(widget)));
+}
+
 int main(int argc,char *argv[])
 {
 	gtk_init(&argc,&argv);
@@ -15,6 +20,8 @@ int main(int argc,char *argv[])
 
 	/* gtk_hscale(or vscale)_new takes only one argument, which GtkAdjustment variable */
 	scale = gtk_hscale_new(GTK_ADJUSTMENT(adjustment));
+	gtk_scale_set_value_pos(GTK_SCALE(scale),GTK_POS_BOTTOM); //GTK_POS_TOP is default, LEFT and RIGHT also possible
+	g_signal_connect(scale,"value-changed",G_CALLBACK(scale_slide),NULL);
 
 	gtk_container_add(GTK_CONTAINER(window),scale);
 
