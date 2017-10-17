@@ -8,7 +8,10 @@ static void file_chooser(GtkWidget *button, gpointer window)
 	/*arg1= title, arg2= mode, mode =GTK_FILE_CHOOSER_ACTION_OPEN,SAVE,SELECT_FOLDER, arg3= button/response pairs follow */
 	file_chooser_dialog = gtk_file_chooser_dialog_new("Choose a file",GTK_WINDOW(window),GTK_FILE_CHOOSER_ACTION_OPEN,GTK_STOCK_OK,GTK_RESPONSE_OK,GTK_STOCK_CANCEL,GTK_RESPONSE_CANCEL,NULL);
 
+	
 	gtk_widget_show_all(file_chooser_dialog);
+
+	gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(file_chooser_dialog),g_get_home_dir()); //optional
 
 	response = gtk_dialog_run(GTK_DIALOG(file_chooser_dialog));
 
