@@ -1,7 +1,7 @@
 #include<gtk/gtk.h>
 
 
-static void dialog_response(GtkWidget *dialog, gint response, gpointer data)
+static void dialog_response(GtkWidget *dialog, gint response, gpointer data) //gint response is implicitly passed by g_signal_connect
 {
 	if(response == GTK_RESPONSE_OK)
 		g_print("OK\n");
